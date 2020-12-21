@@ -1,0 +1,455 @@
+/* General Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+input {
+    font-size: 14px;
+}
+
+body {
+    line-height: 1.4;
+    font-family: "ubuntu mono";
+    color: #333333;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+h1 {
+    margin-bottom: 16px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #777;
+}
+
+input {
+    border: 1px solid #eeeeee;
+    padding: 12px;
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+    padding: 12px;
+    background: #7C5CBF;
+    border: none;
+    color: white;
+    font-size: 16px;
+    transition: background .3s ease;
+}
+
+button:hover {
+    background: #6b47b8;
+}
+
+button:disabled {
+    cursor: default;
+    background: #7c5cbf94;
+}
+
+/* Join Page Styles */
+
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+
+.centered-form {
+   
+  background: url("/img/ng-colab-space_night.gif");
+  background-size: cover;
+    width: 100vw;
+    height: 100vh;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centered-form__box {
+    box-shadow: 0px 0px 17px 1px #1D1F26;
+    background: #F7F7FA;
+    padding: 24px;
+    width: 250px;
+}
+
+.centered-form button {
+    width: 100%;
+}
+
+.centered-form input {
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+/* Header */
+
+.header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    max-height: 8vh;
+    width: 100vw;
+    background-color: #6b47b8;
+    box-shadow: 0px 0px 10px -1px #212121;
+    display: none;
+}
+
+.header h2 {
+    color: #fff;
+    padding: 5px;
+    flex-grow: 1;
+}
+ /* The switch - the box around the slider */
+ .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #6b47b8;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #6b47b8;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  } 
+
+  #qr{
+    position: absolute;
+    
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+  }
+  
+/* Burger Icon */
+#burger {
+    width: 30px;
+    height: 30px;
+    margin: 0px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    cursor: pointer;
+}
+
+#burger div {
+    transition: all 0.3s ease;
+    margin: 2px 0px;
+    padding: 0;
+}
+
+.line1 {
+    background-color: #fff;
+    width: 10px;
+    height: 2px;
+}
+
+.line2 {
+    background-color: #fff;
+    width: 20px;
+    height: 3px;
+}
+
+.line3 {
+    background-color: #fff;
+    width: 25px;
+    height: 2px;
+}
+
+.toggle .line1{
+    transform: rotate(45deg) translate(4px, 5px);
+    width: 15px;
+}
+.toggle .line2{
+    transform: translateX(40%);
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(-45deg) translate(4px, -5px);
+    width: 15px;
+}
+
+/* Chat Page Layout */
+
+.chat {
+    display: flex;
+}
+
+.chat__sidebar {
+    height: 100vh;
+    color: white;
+    background: #333744;
+    width: 225px;
+    overflow-y: scroll;
+}
+
+#sidebar {
+    transition: all 0.3s ease;
+}
+
+/* Chat styles */
+
+.chat__main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+}
+
+.chat__messages {
+    flex-grow: 1;
+    padding: 24px 24px 0 24px;
+    overflow-y: scroll;
+}
+
+/* Message Styles */
+
+.message {
+    margin-bottom: 16px;   
+}
+
+.message__name {
+    font-weight: 600;
+    font-size: 14px;
+    margin-right: 8px;
+}
+
+.message__meta {
+    color: #777;
+    font-size: 14px;
+}
+
+.message a {
+    color: #0070CC;
+}
+
+
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+  }
+  
+/* Message Composition Styles */
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    
+  }
+  
+  #myImg:hover {opacity: 0.7;}
+  
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(236, 235, 235); /* Fallback color */
+    background-color: rgba(245, 243, 243, 0.9); /* Black w/ opacity */
+  }
+  
+  /* Modal Content (Image) */
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+  }
+  
+  /* Caption of Modal Image (Image Text) - Same Width as the Image */
+  #caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    padding: 10px 0;
+    height: 150px;
+  }
+  
+  /* Add Animation - Zoom in the Modal */
+  .modal-content, #caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+  
+  @keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+  }
+  
+  /* The Close Button */
+  .close {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    color: #000000;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* 100% Image Width on Smaller Screens */
+  @media only screen and (max-width: 700px){
+    .modal-content {
+      width: 100%;
+    }
+  }
+.compose {
+    display: flex;
+    flex-shrink: 0;
+    margin-top: 16px;
+    padding: 24px;
+}
+
+.compose form {
+    display: flex;
+    flex-grow: 1;
+    margin-right: 16px;
+}
+
+.compose input {
+    border: 1px solid #eeeeee;
+    width: 100%;
+    padding: 12px;
+    margin: 0 16px 0 0;
+    flex-grow: 1;
+}
+
+.compose button {
+    font-size: 14px;
+}
+
+/* Chat Sidebar Styles */
+
+.room-title {
+    font-weight: 700;
+    font-style: italic;
+    text-transform: capitalize;
+    font-size: 32px;
+    background: #2c2f3a;
+    padding: 24px;   
+}
+
+.list-title {
+    font-weight: 400;
+    font-size: 26px;
+    margin-bottom: 4px;
+    padding: 12px 24px 0 24px;
+}
+
+.users {
+    list-style-type: none;
+    font-weight: 300;
+    text-transform: capitalize;
+    padding: 12px 24px 0 24px;
+    margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    .chat__sidebar {
+        transform: translateX(-100%);
+        width: 0;
+    }
+    .header {
+        display: flex;
+    }
+    .chat__main {
+        max-height: 90vh;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+}
+

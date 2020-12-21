@@ -1,0 +1,259 @@
+<html>
+  <body>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Langar&display=swap" rel="stylesheet">
+<ul>
+  <li>S</li>
+  <li>E</li>
+  <li>R</li>
+  <li>V</li>
+  <li>E</li>
+  <li>R</li>
+  
+</ul>
+<form size="30%">
+	<input id="toggle" type="checkbox" name="toggle" role="switch" value="on">
+	<label for="toggle" class="surface">
+		<span class="cube">
+			<span class="cube__front"></span>
+			<span class="cube__left"></span>
+			<span class="cube__top"></span>
+			<span class="cube__reflection"></span>
+		</span>
+		<span class="cube">
+			<span class="cube__front"></span>
+			<span class="cube__left"></span>
+			<span class="cube__top"></span>
+		</span>
+		<span class="label-text">Power</span>
+	</label>
+</form>
+<script></script>
+<style>
+  * {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ul {
+  position: absolute;
+  top: 10%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+ul li {
+  list-style: none;
+  font-family: "Langar", cursive;
+  font-size: 1em;
+  letter-spacing: 12px;
+  color: #1a1a1a;
+  text-shadow: none;
+  animation: animate 1s infinite linear;
+}
+@keyframes animate {
+  0% {
+    color: #4dd2ff;
+    text-shadow: none;
+  }
+  18% {
+    color: #ffb3d9;
+    text-shadow: none;
+  }
+  20% {
+    color: #4dd2ff;
+    text-shadow: 0 0 5px #4dd2ff, 0 0 8px #4dd2ff;
+  }
+  30% {
+    color: #ffb3d9;
+    text-shadow: none;
+  }
+  35% {
+    color: #4dd2ff;
+    text-shadow: 0 0 5px #4dd2ff, 0 0 8px #4dd2ff;
+  }
+  70% {
+    color: #ffb3d9;
+    text-shadow: none;
+  }
+  85% {
+    color: #ff80bf;
+    text-shadow: 0 0 5px #ff80bf, 0 0 8px #ff80bf;
+  }
+  90% {
+    color: #1a1a1a;
+    text-shadow: none;
+  }
+  100% {
+    color: #ff80bf;
+    text-shadow: none;
+  }
+}
+ul li:nth-child(1) {
+  animation-delay: 0.2s;
+}
+ul li:nth-child(2) {
+  animation-delay: 0.6s;
+}
+ul li:nth-child(3) {
+  animation-delay: 1s;
+}
+ul li:nth-child(4) {
+  animation-delay: 1.4s;
+}
+ul li:nth-child(5) {
+  animation-delay: 1.8s;
+}
+
+:root {
+  --dur: 0.3s;
+  --timing: cubic-bezier(0.3,1.7,0.6,0.6);
+  --offColor: #008B8B;
+  --onColor: #BBFFFF;
+  font-size: calc(40px + (80 - 40)*(100vw - 320px)/(2560 - 320));
+}
+
+body {
+  background-color: #e3e4e8;
+  color: #17181c;
+  font: 1em/1.5 "Helvetica Neue", Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+form {
+  display: flex;
+  height: 100vh;
+}
+
+.surface, .cube__front, .cube__left, .cube__top {
+  background-color: var(--offColor);
+}
+
+.surface, .surface span {
+  display: block;
+}
+
+.surface, .cube {
+  transform-style: preserve-3d;
+}
+
+.surface {
+  box-shadow: 0 0 1em transparent;
+  transition: all var(--dur) ease-out;
+  cursor: pointer;
+  margin: auto;
+  position: relative;
+  transform: rotateX(45deg) rotateZ(-45deg) translateY(-0.5em);
+  width: 4em;
+  height: 2em;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.cube, .cube span, .label-text {
+  position: absolute;
+  left: 0;
+}
+
+.cube, .cube span {
+  top: 0;
+}
+.cube__front, .cube__left, .cube__top, .cube__reflection {
+  height: 2em;
+  width: 2em;
+}
+.cube__front, .cube__left, .cube__top {
+  transition: background-color var(--dur) ease-out, transform var(--dur) var(--timing);
+}
+.cube__front {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+  transform: rotateX(-90deg);
+  transform-origin: 50% 100%;
+}
+.cube__left {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  transform: rotateY(-90deg);
+  transform-origin: 0 50%;
+}
+.cube__top {
+  transform: translateZ(2em);
+}
+.cube__reflection {
+  background-color: #000;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%, 0 100%);
+  opacity: 0.04;
+  transform: rotate(45deg) scale(0.707);
+  transform-origin: 0 0;
+  transition: clip-path var(--dur) var(--timing), -webkit-clip-path var(--dur) var(--timing);
+}
+.cube:nth-child(2) {
+  transform: translate(2em, 0);
+}
+.cube:nth-child(2) .cube__front {
+  transform: rotateX(-90deg) scaleY(0.25);
+}
+.cube:nth-child(2) .cube__left {
+  transform: rotateY(-90deg) scaleX(0.25);
+}
+.cube:nth-child(2) .cube__top {
+  transform: translateZ(0.5em);
+}
+
+input[type=checkbox] {
+  position: fixed;
+  top: -1.5em;
+  left: -1.5em;
+}
+input[type=checkbox]:checked + .surface {
+  box-shadow: 0 0 1em var(--onColor);
+}
+input[type=checkbox]:checked + .surface, input[type=checkbox]:checked + .surface .cube__front, input[type=checkbox]:checked + .surface .cube__left, input[type=checkbox]:checked + .surface .cube__top {
+  background-color: var(--onColor);
+}
+input[type=checkbox]:checked + .surface .cube__front {
+  transform: rotateX(-90deg) scaleY(0.25);
+}
+input[type=checkbox]:checked + .surface .cube__left {
+  transform: rotateY(-90deg) scaleX(0.25);
+}
+input[type=checkbox]:checked + .surface .cube__top {
+  transform: translateZ(0.5em);
+}
+input[type=checkbox]:checked + .surface .cube__reflection {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 67% 100%, 0 33%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 67% 100%, 0 33%);
+}
+input[type=checkbox]:checked + .surface .cube:nth-child(2) .cube__front {
+  transform: rotateX(-90deg);
+}
+input[type=checkbox]:checked + .surface .cube:nth-child(2) .cube__left {
+  transform: rotateY(-90deg);
+}
+input[type=checkbox]:checked + .surface .cube:nth-child(2) .cube__top {
+  transform: translateZ(2em);
+}
+
+.label-text {
+  top: calc(100% + 0.5em);
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #2e3138;
+    color: #e3e4e8;
+  }
+
+  .cube__reflection {
+    opacity: 0.08;
+  }
+}
+
+</style>
+  </body>
+  </html>

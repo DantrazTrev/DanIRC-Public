@@ -1,0 +1,39 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/favicon.png">
+    <title>DanIRC</title>
+</head>
+<body >  
+    <div class="centered-form">
+        <div class="centered-form__box">
+            <h1>Guests</h1>
+            <h6>boo you've not installed the client</h6>
+            <br>
+            <form name='Ges' action="/chat.html" onsubmit="Notra()">
+                <label>Display Name</label>
+                <input type="text" name="username" placeholder="Display name" required  x/>
+                <label>Invite Code</label>
+                <input type="text" name="room" placeholder="JXQYWWM" required />
+                <input type="checkbox" name="localserver" checked hidden=true>
+                <input type="checkbox" name="invite" checked hidden=true>
+                
+                <button>Join</button>
+            </form>
+        </div>
+        
+    </div>
+    <script>
+        function Notra()
+        {
+            document.forms['Ges']['room'].value=atob(document.forms['Ges']['room'].value)
+        }
+    </script>
+</body>
+</html>
