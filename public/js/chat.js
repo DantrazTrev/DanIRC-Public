@@ -3,7 +3,7 @@ var socket = io();
 var connection = new RTCMultiConnection();
 
 // this line is VERY_important
-connection.socketURL = 'https://rtcmulticonnection.herokuapp.com:443/';
+connection.socketURL = 'https://webrtcweb.com:9002/';// teMP REPLACEMENT FOR THE SIGNALLING SERVERS
 connection.mediaConstraints = {
     audio: true,
     video: false
